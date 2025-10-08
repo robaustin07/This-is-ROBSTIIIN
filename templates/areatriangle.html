@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Area of a Triangle</title>
+    <link rel="icon" type="image/png" href="static/images/weblogo.png">
+</head>
+<body>
+    <section>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>navbar</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <nav class="navbar">
+        <ul class="nav-links">
+			<li><a href="{{ url_for('index') }}">Home</a></li>
+			<li><a href="{{ url_for('profile') }}">Profile</a></li>
+			<li>
+				<a>Works</a>
+				<ul class="dropdown">
+					<li><a href="{{ url_for('touppercase') }}">Convert to Uppercase</a></li>
+					<li><a href="{{ url_for('areacircle') }}">Area of a Circle</a></li>
+					<li><a href="{{ url_for('areatriangle') }}">Area of a Triangle</a></li>
+				</ul>
+			</li>	
+		</ul>
+        <div class="nav-right">
+        <span id="contactTrigger" class="brand">ROBSTIIIN.</span>
+        </div>
+	</nav>
+    </section>
+
+    <section id="contactPopup" class="hero-popup">
+      <div class="hero-content">
+        <h1>Contact Me!</h1><p><br>
+                Course: <b><u>Bachelor of Science in Computer Engineering</u></b><br>
+                School: <a href="https://www.pup.edu.ph"><b><u>Polytechnic University of the Philippines, Sta. Mesa, Manila</u></b></a><br>
+                Student Number: <b><u>2024-03866-MN-0</u></b> | Year & Section: <b><u>BSCpE 2-3</u></b><br><br>
+                
+                <i>Come say Hello! --> </i>
+                <a href="mailto:robaustinvera@gmail.com"><b><u>Personal Email</u></b></a>  |  
+                <a href="mailto:robaustinlvera@iskolarngbayan.pup.edu.ph"><b><u>Institution Email</u></b></a><br>
+                Contact Number: <b><u>0962 711 3072</u></b><br>
+                Discord: <a href="https://discord.com/users/715487925147795466"<b><u>robstiiin_</u></b></a> |
+                Facebook: <a href="https://www.facebook.com/RobAustin07"><b><u>Rob Austin</u></b></a> |
+                Instagram: <a href="https://www.instagram.com/robaustin._"><b><u>@robaustin._</u></b></a><br><br></p>
+        <button id="closePopup">Close</button>
+      </div>
+    </section>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Find the Area of a Triangle</h1>
+    <p>Calculate the area of any triangle in an instant!</p>
+
+    <input type="number" id="baseInput" placeholder="Enter the base..." />
+    <input type="number" id="heightInput" placeholder="Enter the height..." />
+
+    <p id="triangleResult"></p>
+
+    <button type="button" onclick="calculateTriangleArea()">Calculate</button>
+    <button type="button" onclick="clearTriangleArea()">Clear Area</button>
+  </div>
+</section>
+
+<script>
+function calculateTriangleArea() {
+  const base = document.getElementById("baseInput").value;
+  const height = document.getElementById("heightInput").value;
+  const result = document.getElementById("triangleResult");
+
+  if (base === "" || height === "" || base <= 0 || height <= 0) {
+    result.textContent = "Please enter valid positive numbers for base and height.";
+    statusMessage.textContent = "";
+    return;}
+
+  const area = 0.5 * base * height;
+  result.textContent = `Area: ${area.toFixed(2)}`;
+ 
+
+  statusMessage.style.opacity = 1;
+  setTimeout(() => {
+    statusMessage.style.opacity = 0;}, 2000);}
+
+function clearTriangleArea() {
+  document.getElementById("baseInput").value = "";
+  document.getElementById("heightInput").value = "";
+  document.getElementById("triangleResult").textContent = "";
+  const statusMessage = document.getElementById("triangleStatusMessage");
+  statusMessage.textContent = "";
+  statusMessage.style.opacity = 1;}
+</script>
+
+  <script>
+    const contactTrigger = document.getElementById("contactTrigger");
+    const contactPopup = document.getElementById("contactPopup");
+    const closePopup = document.getElementById("closePopup");
+
+    contactTrigger.addEventListener("click", () => {
+      contactPopup.style.display = "flex";});
+
+    closePopup.addEventListener("click", () => {
+      contactPopup.style.display = "none";});
+  </script>
+
+<footer class="footer">
+<p>&copy; 2025 Rob Austin. All rights reserved.</p>
+</footer>
+</body>
+</html>
