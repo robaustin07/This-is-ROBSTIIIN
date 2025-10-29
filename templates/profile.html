@@ -1,0 +1,143 @@
+<html>
+<head>
+    <title>Profile // ROBSTIIIN.</title>
+    <link rel="icon" type="image/png" href="static/images/weblogo.png">
+</head>
+<body>
+    <section>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>navbar</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <nav class="navbar">
+        <ul class="nav-links">
+			<li><a href="{{ url_for('index') }}">Home</a></li>
+			<li><a href="{{ url_for('profile') }}">Profile</a></li>
+			<li>
+				<a>Works</a>
+				<ul class="dropdown">
+					<li><a href="{{ url_for('areacircle') }}">Area of a Circle</a></li>
+					<li><a href="{{ url_for('areatriangle') }}">Area of a Triangle</a></li>
+          <li><a href="{{ url_for('convertpostfix') }}">Convert to Postfix</a></li>
+          <li><a href="{{ url_for('touppercase') }}">Convert to Uppercase</a></li>
+				</ul>
+			</li>	
+		</ul>
+        <div class="nav-right">
+        <span id="contactTrigger" class="brand">ROBSTIIIN.</span>
+        </div>
+	</nav>
+    </section>
+
+    <section id="contactPopup" class="hero-popup">
+      <div class="hero-content">
+        <h1>Contact Me!</h1><p><br>
+                Course: <b><u>Bachelor of Science in Computer Engineering</u></b><br>
+                School: <a href="https://www.pup.edu.ph"><b><u>Polytechnic University of the Philippines, Sta. Mesa, Manila</u></b></a><br>
+                Student Number: <b><u>2024-03866-MN-0</u></b> | Year & Section: <b><u>BSCpE 2-3</u></b><br><br>
+                
+                <i>Come say Hello! --> </i>
+                <a href="mailto:robaustinvera@gmail.com"><b><u>Personal Email</u></b></a>  |  
+                <a href="mailto:robaustinlvera@iskolarngbayan.pup.edu.ph"><b><u>Institution Email</u></b></a><br>
+                Contact Number: <b><u>0962 711 3072</u></b><br>
+                Discord: <a href="https://discord.com/users/715487925147795466"<b><u>robstiiin_</a></u></b> |
+                Facebook: <a href="https://www.facebook.com/RobAustin07"><b><u>Rob Austin</u></b></a> |
+                Instagram: <a href="https://www.instagram.com/robaustin._"><b><u>@robaustin._</u></b></a><br><br></p>
+        <button id="closePopup">Close</button>
+      </div>
+    </section>
+
+    <div class="container">
+        <div class="slideshow">
+            <div class="slides">
+                <div class="slide"><img src="static/images/1.png" alt="Graduation Image 1"></div>
+                <div class="slide"><img src="static/images/2.png" alt="Graduation Image 2"></div>
+                <div class="slide"><img src="static/images/3.png" alt="Church Photo 1"></div>
+                <div class="slide"><img src="static/images/4.png" alt="Church Photo 2"></div>
+                <div class="slide"><img src="static/images/5.png" alt="Fun Photo 1"></div>
+                <div class="slide"><img src="static/images/6.png" alt="Fun Photo 2"></div>
+            </div>
+        </div>
+    
+        <div class="text-box">
+            <h1>Hello, the name is Rob Austin L. Vera!</h1>
+            <h2>
+            <span class="role" onclick="showInfo('student', this)">🎓 Student.</span>
+            <span class="role" onclick="showInfo('altar', this)">🙏 Altar Server.</span>
+            <span class="role" onclick="showInfo('gamer', this)">🎮 Gamer.</span>
+            </h2>
+
+            <div id="infoBox">
+            <p>Select a role and find more about me!</p>
+</div>
+
+<script>
+  function showInfo(role) {
+    const infoBox = document.getElementById("infoBox");
+    let content = "";
+
+    if (role === "student") {
+      content = `
+        <b>🎓 Rob Austin as a Student:</b><br><br>
+         <p>
+            Course: <b><u>Bachelor of Science in Computer Engineering</u></b><br>
+            School: <a href="https://www.pup.edu.ph"><b><u>Polytechnic University of the Philippines, Sta. Mesa, Manila</u></b></a><br>
+            Student Number: <b><u>2024-03866-MN-0</u></b> | Year & Section: <b><u>BSCpE 2-3</u></b><br><br>
+            
+            <i>Come say Hello! --> </i>
+            <a href="mailto:robaustinvera@gmail.com"><b><u>Personal Email</u></b></a>  |  
+            <a href="mailto:robaustinlvera@iskolarngbayan.pup.edu.ph"><b><u>Institution Email</u></b></a><br>
+            Contact Number: <b><u>0962 711 3072</u></b><br><br>
+
+            Studied <i><u>Science, Technology, Engineering & Mathematics (STEM)</u></i> in <a href="https://www.fatima.edu.ph"><b>Our Lady of Fatima University - Antipolo</a></b>.<br>
+            Finished <i><u>Grade School</u></i> and <i><u>Junior High School</u></i> in <a href="https://www.olps.edu.ph"><b>Our Lady of Peace School - Antipolo</a></b>.<br>
+        </p>
+      `;
+    } else if (role === "altar") {
+      content = `
+        <b>🙏 Rob Austin as an Altar Server:</b><br><br>
+        <p>
+            Currently serving as the <b><U>Ministry Coordinator</u></b> of the <a href="https://www.facebook.com/mas.antipolocathedral"><b><U>Ministry of Altar Servers - Antipolo Cathedral</a></u></b>.<br>
+            In service as <b>Member</b> since <b><i>February 2016</b></i>. In service as <b>Coordinator</b> since <b><i>June 2025</b></i>.<br>
+            <br>
+            In service at the <a href="https://www.facebook.com/antipolocathedralph"><b>Antipolo Cathedral</a></b>, also known as the <b>International Shrine of Our Lady of Peace & Good Voyage</b>, and <b>Immaculate Conception Parish.</b><br>
+            Under the jurisdiction of the <a href="https://www.facebook.com/antipolodiocese"><b>Diocese of Antipolo</a></b>, located in <b>Antipolo City, Rizal</b>.
+        </p>
+        <br><i>Mabuhay ang Sakristang Antipoleño!</i><br>
+        <b><i>"It is the Lord who goes before you. He will be with you; he will not fail you or forsake you. Do not fear or be dismayed.”</b> (-Deuteronomy 31:8)</i>
+      `;
+    } else if (role === "gamer") {
+      content = `
+        <b>🎮 Rob Austin as a Gamer:</b><br><br>
+        <p>I enjoy playing competitive games. I mainly focus on climbing the ranks of <a href="https://playvalorant.com/"><b>VALORANT</b></a>, a 5v5 tactical shooter game created by Riot Games.<br>
+        I also plan to enter streaming when I get the chance. 👀 <br>
+        
+        <br>Riot Games ID: <b><u>arowbii#wabu</u></b> | Twitch: <i>soon!</i><br> 
+        Discord: <a href="https://discord.com/users/715487925147795466"<b><u>robstiiin_</a></u></b> |
+        Facebook: <a href="https://www.facebook.com/RobAustin07"><b><u>Rob Austin</u></b></a> |
+        Instagram: <a href="https://www.instagram.com/robaustin._"><b><u>@robaustin._</u></b></a><br>
+      `;}
+    infoBox.innerHTML = content;}
+
+</script>
+
+  <script>
+    const contactTrigger = document.getElementById("contactTrigger");
+    const contactPopup = document.getElementById("contactPopup");
+    const closePopup = document.getElementById("closePopup");
+
+    contactTrigger.addEventListener("click", () => {
+      contactPopup.style.display = "flex";});
+
+    closePopup.addEventListener("click", () => {
+      contactPopup.style.display = "none";});
+  </script>
+    </div>
+  </div>
+
+<footer class="footer">
+    <p>&copy; 2025 Rob Austin. All rights reserved.</p>
+</footer>
+</body>
+</html>
